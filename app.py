@@ -13,7 +13,7 @@ mp_drawing = mp.solutions.drawing_utils
 mp_face_mesh = mp.solutions.face_mesh
 
 # Load the trained model
-model = tf.keras.models.load_model('testfullacc.keras')
+model = tf.keras.models.load_model('action.keras')
 
 # Actions array
 actions = np.array(['hello', 'thanks', 'iloveyou'])
@@ -90,6 +90,7 @@ def generate_frames():
     sequence = []
     sentence = []
     predictions = []
+    last_prediction = None  # Keep track of the last prediction
     
     cap = cv2.VideoCapture(0)
     
@@ -114,22 +115,29 @@ def generate_frames():
             
             if len(sequence) == 30:
                 res = model.predict(np.expand_dims(sequence, axis=0))[0]
-                predictions.append(np.argmax(res))
+                predicted_action_index = np.argmax(res)
+                predictions.append(predicted_action_index)
+                predicted_action = actions[predicted_action_index]
                 
                 # Visualization logic
-                if np.unique(predictions[-10:])[0]==np.argmax(res): 
-                    if res[np.argmax(res)] > threshold: 
-                        if len(sentence) > 0: 
-                            if actions[np.argmax(res)] != sentence[-1]:
-                                sentence.append(actions[np.argmax(res)])
+                if np.unique(predictions[-10:])[0] == predicted_action_index:
+                    if res[predicted_action_index] > threshold:
+                        if len(sentence) > 0:
+                            if predicted_action != sentence[-1]:
+                                sentence.append(predicted_action)
                         else:
-                            sentence.append(actions[np.argmax(res)])
+                            sentence.append(predicted_action)
 
-                if len(sentence) > 5: 
+                if len(sentence) > 5:
                     sentence = sentence[-5:]
 
                 # Viz probabilities
                 image = prob_viz(res, actions, image, colors)
+
+                # Display only the last prediction
+                if predicted_action != last_prediction:
+                    print(f"Predicted Action: {predicted_action}")
+                    last_prediction = predicted_action
             
             cv2.rectangle(image, (0,0), (640, 40), (245, 117, 16), -1)
             cv2.putText(image, ' '.join(sentence), (3,30), 
