@@ -13,10 +13,10 @@ mp_drawing = mp.solutions.drawing_utils
 mp_face_mesh = mp.solutions.face_mesh
 
 # Load the trained model
-model = tf.keras.models.load_model('action.keras')
+model = tf.keras.models.load_model('testfullacc.keras')
 
 # Actions array
-actions = np.array(['hello', 'thanks', 'iloveyou'])
+actions = np.array(['Hello', 'Bye', 'Deaf'])
 
 # Detection variables
 sequence = []

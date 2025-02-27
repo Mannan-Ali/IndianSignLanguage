@@ -3,8 +3,8 @@ Logs/
 MP_Data/
 
 # Model files
-*.keras
-*.h5
+# *.keras
+# *.h5
 
 # Python
 __pycache__/
@@ -17,3 +17,4 @@ __pycache__/
 .venv
 env/
 venv/
+
