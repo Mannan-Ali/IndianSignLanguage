@@ -3,10 +3,11 @@ from flask import Flask, render_template, Response
 import cv2
 import numpy as np
 import mediapipe as mp
+from flask_cors import CORS
 import tensorflow as tf
 
 app = Flask(__name__)
-
+CORS(app)  # Enable CORS
 # Initialize mediapipe
 mp_holistic = mp.solutions.holistic
 mp_drawing = mp.solutions.drawing_utils
@@ -149,10 +150,6 @@ def generate_frames():
             
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
-
-@app.route('/')
-def index():
-    return render_template('index.html')
 
 @app.route('/video_feed')
 def video_feed():
