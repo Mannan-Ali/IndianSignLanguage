@@ -1,13 +1,16 @@
-import './App.css'
-
+import "./App.css";
+import Header from "./components/Header";
+import { Outlet } from 'react-router-dom';
+import Footer from "./components/Footer";
 function App() {
-
   return (
     <>
-      <h1>Sign Language Detection</h1>
-      <img src="http://localhost:5000/video_feed" alt="Live Video" />
+      <Header />
+      <Outlet/>
+      <Footer/>
+
     </>
-  )
+  );
 }
 
-export default App
+export default App;
