@@ -2,6 +2,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { HashLink } from "react-router-hash-link";
 // rafc
+
 const Header = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   //// Get the current location to track the URL hash for functioning of isActive
@@ -55,7 +56,7 @@ const Header = () => {
                   alert("\u2139 The functions Buy, Sell and Check Details are not available as it hasn't been deployed on the live test network due to insufficient test Sepolia Ether.😢");
                 }}
               >
-                Converter
+                Generate
               </NavLink>
             </li>
             <li className="nav__item">

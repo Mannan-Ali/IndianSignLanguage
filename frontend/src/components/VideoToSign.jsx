@@ -4,7 +4,22 @@ const VideoToSign = () => {
   return (
     <section className="desc section" id="desc">
       <h1>Sign Language Detection</h1>
-      <img src="http://localhost:5000/video_feed" alt="Live Video" />
+      <div className="cardContainer">
+        <div className="card">
+          <div className="videoContainer">
+            <img src="http://localhost:5000/video_feed" alt="Live Video" />
+          </div>
+          <div className="descriptionSection">
+            <textarea
+              type="text"
+              name="fname"
+              id="fname"
+              placeholder="........."
+              readOnly
+            />
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

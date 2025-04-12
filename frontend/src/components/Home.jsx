@@ -1,12 +1,14 @@
-
 import { NavLink } from "react-router-dom";
+
+//images
+import communication from "../assets/img/communication.png";
+
 const Home = () => {
   return (
     <main className="main">
       {/* <!--==================== HOME ====================--> */}
       <section className="home section" id="home">
         <div className="home__container container grid">
-          <img src="#" alt="image" className="home__img" />
 
           <div className="home__data">
             <h1 className="home__title">
@@ -25,22 +27,19 @@ const Home = () => {
             </p>
             <div className="home__buttons">
               <NavLink
-                to="/transectMcoins"
-                onClick={() => {
-                  alert(
-                    "\u2139 The functions Buy, Sell and Check Details are not available as it hasn't been deployed on the live test network due to insufficient test Sepolia Ether.😢"
-                  );
-                }}
+                to="/videoToSign"
                 className="button"
               >
                 <span>
                   <i className="ri-arrow-right-line"></i>
                 </span>
-                BUY TOKEN
+                GENERATE
               </NavLink>
             </div>
           </div>
+          <img src={communication} alt="image" className="home__img" />
         </div>
+        
       </section>
 
       {/* <!--==================== DESCRIPTION ====================--> */}
@@ -50,7 +49,7 @@ const Home = () => {
           OUR VISION
         </h2>
         <div className="desc__container container grid">
-          <img src="#" alt="image" className="desc__img" />
+          <img src={communication} alt="image" className="desc__img" />
 
           <ul className="desc__list">
             <li className="desc__item">

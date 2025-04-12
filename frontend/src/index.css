@@ -234,7 +234,17 @@ header {
   row-gap: 2rem;
 }
 
-.home__img {
+.home__img_1 {
+  width: 270px;
+  justify-self: center;
+  /* filter: drop-shadow(var(--shadow-img)); */
+}
+.home__img_2 {
+  width: 270px;
+  justify-self: center;
+  /* filter: drop-shadow(var(--shadow-img)); */
+}
+.home__img_3 {
   width: 270px;
   justify-self: center;
   /* filter: drop-shadow(var(--shadow-img)); */
@@ -617,9 +627,35 @@ form button{
     column-gap: 12rem;
     padding-top: 4rem;
   }
-
-  .home__img {
-    width: 480px;
+  .home__images {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: flex-start;
+  }
+  .imgs_right {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 350px; /* FIX: Reserve enough space */
+    flex-shrink: 0;
+  }
+  .imgs_right {
+    width: 350px; 
+  }
+  /* .home__img_2,
+  .home__img_3 {
+    border: 1px solid red;
+  } */
+  .home__img_1 { 
+    width: 360px;
+    
+  }
+  .home__img_2 {
+    width: 267px;
+  }
+  .home__img_3 {
+    width: 267px;
   }
 
   .home__data {
@@ -651,6 +687,55 @@ form button{
     row-gap: 1.5rem;
   }
 
+  /* Video To Sign Section */
+  .cardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    width: 100%;
+  }
+  
+  .card {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    height: auto;
+  }
+  
+  .videoContainer img {
+    border-radius: 10px;
+    width: 120vh;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .descriptionSection {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .descriptionSection textarea {
+    height: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    resize: none;
+    background: #f9f9f9;
+  }
+  
+
+  /* Footer  */
   .footer__logo {
     margin-bottom: 1.5rem;
   }
