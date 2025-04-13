@@ -1,23 +1,26 @@
 # app.py
-from flask import Flask, render_template, Response
+from flask import Flask, render_template, Response, jsonify, send_from_directory
 import cv2
 import numpy as np
 import mediapipe as mp
 from flask_cors import CORS
 import tensorflow as tf
+import os
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS
+# Enable CORS with more specific settings
+CORS(app, resources={r"/*": {"origins": "*"}})
+
 # Initialize mediapipe
 mp_holistic = mp.solutions.holistic
 mp_drawing = mp.solutions.drawing_utils
 mp_face_mesh = mp.solutions.face_mesh
 
 # Load the trained model
-model = tf.keras.models.load_model('testfullacc.keras')
+model = tf.keras.models.load_model('best_sign_language_model.keras')
 
-# Actions array
-actions = np.array(['Hello', 'Bye', 'Deaf'])
+# Actions array - update to match the model's training data
+actions = np.array(['Hello', 'Bye', 'Deaf', 'Thanks'])
 
 # Detection variables
 sequence = []
@@ -87,8 +90,10 @@ def prob_viz(res, actions, input_frame, colors):
     return output_frame
 
 def generate_frames():
-    colors = [(245,117,16), (117,245,16), (16,117,245)]
+    # Make colors match the number of actions
+    colors = [(245,117,16), (117,245,16), (16,117,245), (245,16,117)]
     sequence = []
+    global sentence  # Make sentence global so we can access it from other routes
     sentence = []
     predictions = []
     last_prediction = None  # Keep track of the last prediction
@@ -142,19 +147,55 @@ def generate_frames():
             
             cv2.rectangle(image, (0,0), (640, 40), (245, 117, 16), -1)
             cv2.putText(image, ' '.join(sentence), (3,30), 
-                       cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
+                      cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
             
             # Convert to jpg format
             ret, buffer = cv2.imencode('.jpg', image)
             frame = buffer.tobytes()
             
             yield (b'--frame\r\n'
-                   b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+                  b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+
+# Root path to serve a simple HTML page
+@app.route('/')
+def index():
+    return """
+    <html>
+      <head>
+        <title>Indian Sign Language Detection</title>
+      </head>
+      <body>
+        <h1>Indian Sign Language Detection</h1>
+        <img src="/video_feed" width="640" height="480" />
+        <div id="sentence"></div>
+      </body>
+    </html>
+    """
+
+# Create a route to access detected sentences
+@app.route('/get_sentence')
+def get_sentence():
+    global sentence
+    return jsonify({'sentence': ' '.join(sentence)})
 
 @app.route('/video_feed')
 def video_feed():
+    # Set proper headers for streaming content
     return Response(generate_frames(), 
-                    mimetype='multipart/x-mixed-replace; boundary=frame')
+                    mimetype='multipart/x-mixed-replace; boundary=frame',
+                    headers={
+                        'Cache-Control': 'no-cache, no-store, must-revalidate',
+                        'Pragma': 'no-cache',
+                        'Expires': '0'
+                    })
+
+# Serve static files from a directory
+@app.route('/static/<path:path>')
+def serve_static(path):
+    return send_from_directory('static', path)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Ensure the static directory exists
+    os.makedirs('static', exist_ok=True)
+    # Run the app making it accessible from any device on the network
+    app.run(debug=True, host='0.0.0.0', port=5000)

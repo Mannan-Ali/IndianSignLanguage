@@ -1,10 +1,11 @@
 # Folders
 Logs/
 MP_Data/
+Models/
 
 # Model files
-# *.keras
-# *.h5
+*.keras
+*.h5
 
 # Python
 __pycache__/
