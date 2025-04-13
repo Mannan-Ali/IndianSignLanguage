@@ -176,7 +176,10 @@ def index():
 @app.route('/get_sentence')
 def get_sentence():
     global sentence
-    return jsonify({'sentence': ' '.join(sentence)})
+    return jsonify({
+        'sentence': ' '.join(sentence),
+        'words': sentence
+    })
 
 @app.route('/video_feed')
 def video_feed():

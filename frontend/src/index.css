@@ -133,7 +133,7 @@ header {
   position: relative;
   height: var(--header-height);
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -162,7 +162,7 @@ header {
   align-items: center;
 }
 
-.nav__connect{
+.nav__connect {
   font-weight: var(--font-semi-bold);
   font-size: var(--normal-font-size);
 }
@@ -340,37 +340,38 @@ header {
 }
 
 /* <!-- ✨ TRANSECTION ✨ -->*/
-.form-container{
+.form-container {
   padding: 0.5rem 2rem 0rem 2rem;
   border-radius: 1rem;
-  min-height:40vh ;
+  min-height: 40vh;
   min-width: 40vh;
   border: 1px solid lightgray; /* Border for the container */
 }
 
-form{
+form {
   margin: 2rem 0 2rem 0;
 }
 
-form button,input{
-  width:100%;
+form button,
+input {
+  width: 100%;
   border: none;
   outline: none;
   border-radius: 0.75rem;
 }
 
-form input{
+form input {
   border: 1px solid lightgray;
   font-size: 1rem;
   height: 3rem;
   padding-left: 0.5rem;
 }
 
-.amount{
+.amount {
   margin-top: 2rem;
 }
 
-.msg{
+.msg {
   text-align: center;
   margin: 2rem 0 2rem 0;
 }
@@ -382,31 +383,30 @@ form input{
   margin-bottom: 3rem;
 }
 
-form button{
+form button {
   background-color: var(--first-color);
   height: 3rem;
-  color:#fff;
+  color: #fff;
   font-size: 1.15rem;
   cursor: pointer;
-  
 }
-.accountDetail p{
+.accountDetail p {
   margin: 0.75rem 0 0.75rem 0;
 }
 
-.accountDetail h3{
+.accountDetail h3 {
   margin-bottom: 1.5rem;
   text-align: center;
 }
 
-.accountDetail button{
-  margin-top:  1.25rem;
+.accountDetail button {
+  margin-top: 1.25rem;
   background-color: var(--first-color);
   height: 3rem;
-  color:#fff;
+  color: #fff;
   font-size: 1.15rem;
   cursor: pointer;
-  width:20vh;
+  width: 20vh;
   border: none;
   outline: none;
   border-radius: 0.75rem;
@@ -414,10 +414,10 @@ form button{
 .accountNote {
   margin-top: 1.5rem;
 }
-.accountNote i{
+.accountNote i {
   margin-top: 0.6rem;
 }
-.checkDetails p{
+.checkDetails p {
   margin: 1.5rem 0 1.5rem 0;
 }
 /* <!-- ✨ FOOTER ✨ --> */
@@ -641,15 +641,14 @@ form button{
     flex-shrink: 0;
   }
   .imgs_right {
-    width: 350px; 
+    width: 350px;
   }
   /* .home__img_2,
   .home__img_3 {
     border: 1px solid red;
   } */
-  .home__img_1 { 
+  .home__img_1 {
     width: 360px;
-    
   }
   .home__img_2 {
     width: 267px;
@@ -695,7 +694,7 @@ form button{
     padding: 2rem;
     width: 100%;
   }
-  
+
   .card {
     display: flex;
     gap: 20px;
@@ -707,24 +706,29 @@ form button{
     width: 100%;
     height: auto;
   }
-  
+
+  .videoContainer {
+    width: 50%; /* Set video container to 50% of available width */
+  }
+
   .videoContainer img {
     border-radius: 10px;
-    width: 120vh;
+    width: 100%; /*Make image fill the container width */
     height: auto;
     object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
-  
+
   .descriptionSection {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 100%;
+    width: 70%; /* Set description section to match video container width */
   }
-  
+
   .descriptionSection textarea {
-    height: 100%;
+    height: 100%; /* This will make the textarea take full height of its parent */
+    min-height: 400px; /* Minimum height to ensure visibility */
     padding: 15px;
     font-size: 1rem;
     line-height: 1.5;
@@ -733,7 +737,6 @@ form button{
     resize: none;
     background: #f9f9f9;
   }
-  
 
   /* Footer  */
   .footer__logo {
@@ -764,4 +767,54 @@ form button{
   .scrollup {
     right: 3rem;
   }
+}
+
+/* VideoToSign component */
+.connectionError {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  border: 2px dashed #ccc;
+  color: #dc3545;
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
+}
+
+.statusIndicator {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.connected {
+  background-color: #28a745;
+}
+
+.disconnected {
+  background-color: #dc3545;
+}
+
+#detectedSigns {
+  font-family: "Arial", sans-serif;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  resize: none;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s;
+}
+
+#detectedSigns:not(:empty) {
+  background-color: #e8f4ff;
 }

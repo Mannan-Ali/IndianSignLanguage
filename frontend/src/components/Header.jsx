@@ -24,7 +24,7 @@ const Header = () => {
     <header className="header" id="header">
       <nav className="nav container">
         <NavLink to="/" className="nav__logo">
-        <i class="ri-chat-smile-3-line"></i>
+          <i class="ri-chat-smile-3-line"></i>
           <span>SignWays</span>
         </NavLink>
 
@@ -32,13 +32,11 @@ const Header = () => {
           <ul className="nav__list">
             <li className="nav__item">
               <HashLink
-              smooth
+                smooth
                 to="/#home"
                 end
                 className={
-                  isActive("#home")
-                    ? "nav__link active-link"
-                    : "nav__link"
+                  isActive("#home") ? "nav__link active-link" : "nav__link"
                 }
                 onClick={closeMenu}
               >
@@ -52,8 +50,10 @@ const Header = () => {
                   isActive ? `nav__link active-link` : `nav__link`
                 }
                 onClick={() => {
-                  closeMenu(); 
-                  alert("\u2139 The functions Buy, Sell and Check Details are not available as it hasn't been deployed on the live test network due to insufficient test Sepolia Ether.😢");
+                  closeMenu();
+                  alert(
+                    "\u2139 The functions Buy, Sell and Check Details are not available as it hasn't been deployed on the live test network due to insufficient test Sepolia Ether.😢"
+                  );
                 }}
               >
                 Generate
@@ -75,20 +75,22 @@ const Header = () => {
             </li>
             <li className="nav__item">
               <NavLink
-                to="/videoToSign"
+                to="/learnSign"
                 className={({ isActive }) =>
                   isActive ? `nav__link active-link` : `nav__link`
                 }
                 onClick={() => {
-                  closeMenu(); 
-                  alert("\u2139 The functions Buy, Sell and Check Details are not available as it hasn't been deployed on the live test network due to insufficient test Sepolia Ether.😢");
+                  closeMenu();
+                  alert(
+                    "\u2139 The functions Buy, Sell and Check Details are not available as it hasn't been deployed on the live test network due to insufficient test Sepolia Ether.😢"
+                  );
                 }}
               >
                 Learn
               </NavLink>
             </li>
           </ul>
-          
+
           {/* <!-- close button --> */}
           <div className="nav__close" onClick={closeMenu}>
             <i className="ri-close-line"></i>
@@ -96,7 +98,6 @@ const Header = () => {
         </div>
 
         <div className="nav__actions">
-
           {/* <!-- Toggle Button --> */}
           <div className="nav__toggle" onClick={toggleMenu}>
             <i className="ri-menu-line"></i>
