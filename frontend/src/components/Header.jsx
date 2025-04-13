@@ -24,7 +24,7 @@ const Header = () => {
     <header className="header" id="header">
       <nav className="nav container">
         <NavLink to="/" className="nav__logo">
-        <i class="ri-chat-smile-3-line"></i>
+        <i class="ri-earth-fill"></i>
           <span>SignWays</span>
         </NavLink>
 
@@ -75,7 +75,7 @@ const Header = () => {
             </li>
             <li className="nav__item">
               <NavLink
-                to="/videoToSign"
+                to="/jj"
                 className={({ isActive }) =>
                   isActive ? `nav__link active-link` : `nav__link`
                 }

@@ -1,13 +1,14 @@
 import { NavLink } from "react-router-dom";
 
 //images
-import communication from "../assets/img/communication.png";
+import communication from "../assets/img/communication1.png"
+import arrow from "../assets/img/self-esteem.png"
 
 const Home = () => {
   return (
     <main className="main">
       {/* <!--==================== HOME ====================--> */}
-      <section className="home section" id="home">
+      <section className="home section home__sec" id="home">
         <div className="home__container container grid">
 
           <div className="home__data">
@@ -43,13 +44,13 @@ const Home = () => {
       </section>
 
       {/* <!--==================== DESCRIPTION ====================--> */}
-      <section className="desc section" id="Description">
+      <section className="desc section  desc__sec" id="Description">
         <h2 className="section__title">
           CLOSER LOOK AT <br />
           OUR VISION
         </h2>
         <div className="desc__container container grid">
-          <img src={communication} alt="image" className="desc__img" />
+          <img src={arrow} alt="image" className="desc__img" />
 
           <ul className="desc__list">
             <li className="desc__item">

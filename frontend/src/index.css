@@ -4,22 +4,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap");
-
+/* 6EBBFF */
 /* <!-- ✨ VARIABLES CSS ✨ --> */
 :root {
-  --header-height: 3.5rem;
+  --header-height: 3rem;
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --first-color: hsl(93, 54%, 54%);
+  --first-color: #658eff;
   --first-color-alt: hsl(93, 50%, 48%);
-  --first-color-light: hsl(93, 58%, 66%);
+  --first-color-light: hsl(93, 48%, 36%);
   --title-color: hsl(180, 2%, 8%);
   --text-color: hsl(223, 6%, 23%);
   --white-color: hsl(120, 9%, 98%);
   --black-color: hsl(228, 6%, 4%);
-  --body-color: hsl(0, 0%, 100%);
+  --body-color: #6ebbff;
   --container-color: hsl(228, 6%, 12%);
-  --shadow-img: 0 0 48px hsla(93, 54%, 54%, 0.4);
+  --shadow-img: 0 0 48px #ffffffd2;
   --gradient-card: linear-gradient(
     180deg,
     hsla(93, 8%, 8%),
@@ -68,7 +68,7 @@ html {
 body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  background-color: var(--body-color);
+  background-color: var(--white-color);
   color: var(--text-color);
 }
 
@@ -131,9 +131,9 @@ header {
 }
 .nav {
   position: relative;
-  height: var(--header-height);
+  height: 3.2rem;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -162,7 +162,7 @@ header {
   align-items: center;
 }
 
-.nav__connect{
+.nav__connect {
   font-weight: var(--font-semi-bold);
   font-size: var(--normal-font-size);
 }
@@ -213,7 +213,7 @@ header {
 .blur-header::after {
   content: "";
   position: absolute;
-  width: 1000%;
+  width: 100%;
   height: 100%;
   background-color: hsla(228, 24%, 6%, 0.2);
   backdrop-filter: blur(16px);
@@ -228,26 +228,18 @@ header {
   color: var(--first-color);
 }
 /* <!-- ✨ HOME ✨ --> */
-
+.home__sec {
+  background-color: #6ebbff;
+}
 .home__container {
   padding-top: 2.5rem;
   row-gap: 2rem;
 }
 
-.home__img_1 {
+.home__img {
   width: 270px;
   justify-self: center;
-  /* filter: drop-shadow(var(--shadow-img)); */
-}
-.home__img_2 {
-  width: 270px;
-  justify-self: center;
-  /* filter: drop-shadow(var(--shadow-img)); */
-}
-.home__img_3 {
-  width: 270px;
-  justify-self: center;
-  /* filter: drop-shadow(var(--shadow-img)); */
+  filter: drop-shadow(var(--shadow-img));
 }
 
 .home__data {
@@ -261,7 +253,7 @@ header {
 }
 
 .home__title span {
-  color: var(--first-color);
+  color: var(--white-color);
 }
 
 .home__description {
@@ -277,7 +269,7 @@ header {
 }
 
 .button {
-  background-color: var(--first-color);
+  background-color: var(--white-color);
   color: var(--black-color);
   font-weight: var(--font-bold);
   padding: 0.5rem 1.5rem 0.5rem 0.5rem;
@@ -288,7 +280,7 @@ header {
 }
 
 .button span {
-  background-color: var(--white-color);
+  background-color: var(--first-color);
   padding: 0.5rem;
   font-size: 1.25rem;
   border-radius: 50%;
@@ -312,6 +304,9 @@ header {
 }
 
 /* <!-- ✨ DESCRIPTION ✨ --> */
+.desc__sec {
+  background-color: var(--white-color);
+}
 .desc__container {
   padding-top: 2rem;
   row-gap: 2rem;
@@ -319,7 +314,7 @@ header {
 
 .desc__img {
   width: 270px;
-  /* filter: drop-shadow(var(--shadow-img)); */
+  filter: drop-shadow(var(--shadow-img));
   justify-self: center;
 }
 
@@ -339,87 +334,66 @@ header {
   color: var(--first-color);
 }
 
-/* <!-- ✨ TRANSECTION ✨ -->*/
-.form-container{
-  padding: 0.5rem 2rem 0rem 2rem;
-  border-radius: 1rem;
-  min-height:40vh ;
-  min-width: 40vh;
-  border: 1px solid lightgray; /* Border for the container */
-}
+/* Video To Sign Section */
 
-form{
-  margin: 2rem 0 2rem 0;
-}
-
-form button,input{
-  width:100%;
-  border: none;
-  outline: none;
-  border-radius: 0.75rem;
-}
-
-form input{
-  border: 1px solid lightgray;
-  font-size: 1rem;
-  height: 3rem;
-  padding-left: 0.5rem;
-}
-
-.amount{
-  margin-top: 2rem;
-}
-
-.msg{
+.sign__sec h1{
   text-align: center;
-  margin: 2rem 0 2rem 0;
 }
-
-.button-container {
+.cardContainer {
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 3rem;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  width: 100%;
 }
 
-form button{
-  background-color: var(--first-color);
-  height: 3rem;
-  color:#fff;
-  font-size: 1.15rem;
-  cursor: pointer;
-  
-}
-.accountDetail p{
-  margin: 0.75rem 0 0.75rem 0;
-}
-
-.accountDetail h3{
-  margin-bottom: 1.5rem;
-  text-align: center;
+.card {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 100%;
+  height: 70vh;
+  min-height: 40vh;
 }
 
-.accountDetail button{
-  margin-top:  1.25rem;
-  background-color: var(--first-color);
-  height: 3rem;
-  color:#fff;
-  font-size: 1.15rem;
-  cursor: pointer;
-  width:20vh;
-  border: none;
-  outline: none;
-  border-radius: 0.75rem;
+.videoContainer {
+  flex: 0 0 45%; /* Take 45% of the width */
 }
-.accountNote {
-  margin-top: 1.5rem;
+
+.videoContainer img {
+  border-radius: 10px;
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-.accountNote i{
-  margin-top: 0.6rem;
+
+.descriptionSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
 }
-.checkDetails p{
-  margin: 1.5rem 0 1.5rem 0;
+
+.descriptionSection textarea {
+  height: 100%;
+  padding: 12px 25px;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  resize: none;
+  background: #f9f9f9;
+  background: linear-gradient(white 98%, #ccc 2%) repeat-y;
+  background-size: calc(100% - 30px) 1.6rem;
+  background-position: 15px 0;
+  background-clip: content-box;
 }
+
 /* <!-- ✨ FOOTER ✨ --> */
 
 .footer {
@@ -565,6 +539,31 @@ form button{
     width: 50%;
   }
 
+  .card {
+    flex-direction: column;
+    width: auto;
+    height: 90vh;
+  }
+
+  .videoContainer {
+    width: 100%;
+  }
+
+  .videoContainer img {
+    width: 100%;
+  }
+
+  .descriptionSection {
+    width: 100%;
+  }
+  .descriptionSection textarea {
+    height: 100%;
+    padding: 6.9px 25px;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    border-radius: 10px;
+  }
+
   .new__content {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 4rem;
@@ -586,6 +585,7 @@ form button{
   }
 
   .section {
+    height: 83vh;
     padding-block: 7rem 2rem;
   }
 
@@ -594,7 +594,7 @@ form button{
   }
 
   .nav {
-    height: calc(var(--header-height) + 1.7rem);
+    height: calc(var(--header-height) + 1.5rem);
   }
 
   .nav__toggle,
@@ -627,35 +627,9 @@ form button{
     column-gap: 12rem;
     padding-top: 4rem;
   }
-  .home__images {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    align-items: flex-start;
-  }
-  .imgs_right {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    width: 350px; /* FIX: Reserve enough space */
-    flex-shrink: 0;
-  }
-  .imgs_right {
-    width: 350px; 
-  }
-  /* .home__img_2,
-  .home__img_3 {
-    border: 1px solid red;
-  } */
-  .home__img_1 { 
-    width: 360px;
-    
-  }
-  .home__img_2 {
-    width: 267px;
-  }
-  .home__img_3 {
-    width: 267px;
+
+  .home__img {
+    width: 500px;
   }
 
   .home__data {
@@ -680,7 +654,7 @@ form button{
 
   .desc__img {
     margin-right: 22rem;
-    width: 480px;
+    width: 420px;
   }
 
   .desc__list {
@@ -695,7 +669,7 @@ form button{
     padding: 2rem;
     width: 100%;
   }
-  
+
   .card {
     display: flex;
     gap: 20px;
@@ -706,34 +680,42 @@ form button{
     padding: 20px;
     width: 100%;
     height: auto;
+    min-height: 40vh;
   }
-  
+
+  .videoContainer {
+    flex: 0 0 45%; /* Take 45% of the width */
+  }
+
   .videoContainer img {
     border-radius: 10px;
-    width: 120vh;
-    height: auto;
+    width: 100%; /* now it fits within the 45% */
+    height: 100%;
     object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
-  
+
   .descriptionSection {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 100%;
+    flex: 1;
   }
-  
+
   .descriptionSection textarea {
     height: 100%;
-    padding: 15px;
-    font-size: 1rem;
-    line-height: 1.5;
+    padding: 8px 25px;
+    font-size: 1.2rem;
+    line-height: 2.2rem;
     border-radius: 10px;
     border: 1px solid #ccc;
     resize: none;
     background: #f9f9f9;
+    background: linear-gradient(white 98%, #ccc 2%) repeat-y;
+    background-size: calc(100% - 50px) 2.2rem;
+    background-position: 25px 0;
+    background-clip: content-box;
   }
-  
 
   /* Footer  */
   .footer__logo {
