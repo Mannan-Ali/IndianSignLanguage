@@ -361,7 +361,7 @@ header {
 }
 
 .videoContainer {
-  flex: 0 0 45%; /* Take 45% of the width */
+  flex: 0 0 45%; 
 }
 
 .videoContainer img {
@@ -388,10 +388,6 @@ header {
   border: 1px solid #ccc;
   resize: none;
   background: #f9f9f9;
-  background: linear-gradient(white 98%, #ccc 2%) repeat-y;
-  background-size: calc(100% - 30px) 1.6rem;
-  background-position: 15px 0;
-  background-clip: content-box;
 }
 
 /* <!-- ✨ FOOTER ✨ --> */
@@ -711,10 +707,7 @@ header {
     border: 1px solid #ccc;
     resize: none;
     background: #f9f9f9;
-    background: linear-gradient(white 98%, #ccc 2%) repeat-y;
-    background-size: calc(100% - 50px) 2.2rem;
-    background-position: 25px 0;
-    background-clip: content-box;
+
   }
 
   /* Footer  */
@@ -746,4 +739,54 @@ header {
   .scrollup {
     right: 3rem;
   }
+}
+
+/* VideoToSign component */
+.connectionError {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  border: 2px dashed #ccc;
+  color: #dc3545;
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
+}
+
+.statusIndicator {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.connected {
+  background-color: #28a745;
+}
+
+.disconnected {
+  background-color: #dc3545;
+}
+
+#detectedSigns {
+  font-family: "Arial", sans-serif;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  resize: none;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s;
+}
+
+#detectedSigns:not(:empty) {
+  background-color: #e8f4ff;
 }

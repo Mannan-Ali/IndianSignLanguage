@@ -10,7 +10,7 @@ const Footer = () => {
           </NavLink>
 
           <p className="footer__description">
-          Redefining the way you trade, invest and<br />grow in the decentralized world.
+          Redefining the way you communicate, connect, and<br />understand in a world where every sign matters.
           </p>
         </div>
 
@@ -64,7 +64,7 @@ const Footer = () => {
         </div>
       </div>
       <span className="footer__copy">
-            &#169; All Rights Reserved By Mannan Ali Shaikh
+            &#169; All Rights Reserved By SignWays
         </span>
     </footer>
   );
