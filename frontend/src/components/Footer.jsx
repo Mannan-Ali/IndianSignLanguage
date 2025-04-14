@@ -6,11 +6,11 @@ const Footer = () => {
       <div className="footer__container container grid">
         <div className="footer__left">
           <NavLink to="/" className="footer__logo">
-          <i className="ri-btc-fill"></i>MannanCoin
+          <i class="ri-earth-fill"></i>SignWays
           </NavLink>
 
           <p className="footer__description">
-          Redefining the way you trade, invest and<br />grow in the decentralized world.
+          Redefining the way you communicate, connect, and<br />understand in a world where every sign matters.
           </p>
         </div>
 
@@ -25,35 +25,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/products" className="footer__link">
-                  Products
-                </Link>
-              </li>
-              <li>
                 <Link to="/features" className="footer__link">
                   Features
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="footer__title">INFORMATION</h3>
-
-            <ul className="footer__links">
-              <li>
-                <Link to="/blogs" className="footer__link">
-                  Blogs & News
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="footer__link">
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/faqs" className="footer__link">
-                  FAQs
                 </Link>
               </li>
             </ul>
@@ -91,7 +64,7 @@ const Footer = () => {
         </div>
       </div>
       <span className="footer__copy">
-            &#169; All Rights Reserved By Mannan Ali Shaikh
+            &#169; All Rights Reserved By SignWays
         </span>
     </footer>
   );

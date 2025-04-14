@@ -24,7 +24,7 @@ const Header = () => {
     <header className="header" id="header">
       <nav className="nav container">
         <NavLink to="/" className="nav__logo">
-          <i class="ri-chat-smile-3-line"></i>
+        <i class="ri-earth-fill"></i>
           <span>SignWays</span>
         </NavLink>
 
@@ -49,12 +49,6 @@ const Header = () => {
                 className={({ isActive }) =>
                   isActive ? `nav__link active-link` : `nav__link`
                 }
-                onClick={() => {
-                  closeMenu();
-                  alert(
-                    "\u2139 The functions Buy, Sell and Check Details are not available as it hasn't been deployed on the live test network due to insufficient test Sepolia Ether.😢"
-                  );
-                }}
               >
                 Generate
               </NavLink>
@@ -79,12 +73,6 @@ const Header = () => {
                 className={({ isActive }) =>
                   isActive ? `nav__link active-link` : `nav__link`
                 }
-                onClick={() => {
-                  closeMenu();
-                  alert(
-                    "\u2139 The functions Buy, Sell and Check Details are not available as it hasn't been deployed on the live test network due to insufficient test Sepolia Ether.😢"
-                  );
-                }}
               >
                 Learn
               </NavLink>
