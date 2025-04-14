@@ -83,11 +83,8 @@ def extract_keypoints(results):
     return np.concatenate([pose, face, lh, rh])
 
 def prob_viz(res, actions, input_frame, colors):
-    output_frame = input_frame.copy()
-    for num, prob in enumerate(res):
-        cv2.rectangle(output_frame, (0,60+num*40), (int(prob*100), 90+num*40), colors[num], -1)
-        cv2.putText(output_frame, actions[num], (0, 85+num*40), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 2, cv2.LINE_AA)
-    return output_frame
+    # Return the input frame unmodified to remove probability visualization
+    return input_frame
 
 def generate_frames():
     # Make colors match the number of actions
@@ -111,7 +108,7 @@ def generate_frames():
             # Make detections
             image, results = mediapipe_detection(frame, holistic)
             
-            # Draw landmarks
+            # Draw landmarks - keep this to show face points
             draw_styled_landmarks(image, results)
             
             # Prediction logic
@@ -125,7 +122,7 @@ def generate_frames():
                 predictions.append(predicted_action_index)
                 predicted_action = actions[predicted_action_index]
                 
-                # Visualization logic
+                # Update sentence in backend without displaying it on video
                 if np.unique(predictions[-10:])[0] == predicted_action_index:
                     if res[predicted_action_index] > threshold:
                         if len(sentence) > 0:
@@ -137,17 +134,10 @@ def generate_frames():
                 if len(sentence) > 5:
                     sentence = sentence[-5:]
 
-                # Viz probabilities
-                image = prob_viz(res, actions, image, colors)
-
-                # Display only the last prediction
+                # Log the prediction but don't display it on the video
                 if predicted_action != last_prediction:
                     print(f"Predicted Action: {predicted_action}")
                     last_prediction = predicted_action
-            
-            cv2.rectangle(image, (0,0), (640, 40), (245, 117, 16), -1)
-            cv2.putText(image, ' '.join(sentence), (3,30), 
-                      cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
             
             # Convert to jpg format
             ret, buffer = cv2.imencode('.jpg', image)
