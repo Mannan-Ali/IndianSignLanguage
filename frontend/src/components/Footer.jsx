@@ -6,11 +6,13 @@ const Footer = () => {
       <div className="footer__container container grid">
         <div className="footer__left">
           <NavLink to="/" className="footer__logo">
-          <i class="ri-earth-fill"></i>SignWays
+            <i class="ri-earth-fill"></i>SignWays
           </NavLink>
 
           <p className="footer__description">
-          Redefining the way you communicate, connect, and<br />understand in a world where every sign matters.
+            Redefining the way you communicate, connect, and
+            <br />
+            understand in a world where every sign matters.
           </p>
         </div>
 
@@ -45,7 +47,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://github.com/Mannan-Ali"
+                href="https://github.com/mohak34/indiansignlanguage"
                 target="_blank"
                 className="footer__social-link"
               >
@@ -64,8 +66,8 @@ const Footer = () => {
         </div>
       </div>
       <span className="footer__copy">
-            &#169; All Rights Reserved By SignWays
-        </span>
+        &#169; All Rights Reserved By SignWays
+      </span>
     </footer>
   );
 };

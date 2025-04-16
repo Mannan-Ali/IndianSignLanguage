@@ -17,10 +17,10 @@ mp_drawing = mp.solutions.drawing_utils
 mp_face_mesh = mp.solutions.face_mesh
 
 # Load the trained model
-model = tf.keras.models.load_model('testfullacc.keras')
+model = tf.keras.models.load_model('GRU_L2Reg_final.keras')
 
 # Actions array - update to match the model's training data
-actions = np.array(['Hello', 'Bye', 'Deaf', 'Thanks'])
+actions = np.array(['Hello', 'Flag', 'Deaf', 'Thanks','You'])
 
 # Detection variables
 sequence = []
@@ -88,7 +88,7 @@ def prob_viz(res, actions, input_frame, colors):
 
 def generate_frames():
     # Make colors match the number of actions
-    colors = [(245,117,16), (117,245,16), (16,117,245), (245,16,117)]
+    colors = [(245, 117, 16), (117, 245, 16), (16, 117, 245), (245, 16, 117),(117, 16, 245) , (205,92,92), (255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0)]
     sequence = []
     global sentence  # Make sentence global so we can access it from other routes
     sentence = []

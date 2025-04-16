@@ -1,0 +1,286 @@
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  color: var(--text-color);
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.project-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+.project-logo-placeholder {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1.5rem;
+  background-color: var(--first-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-logo-placeholder span {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.project-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--title-color);
+  margin-bottom: 0.5rem;
+}
+
+.project-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about-section {
+  margin-bottom: 4rem;
+}
+
+.about-section h2 {
+  font-size: 1.8rem;
+  color: var(--title-color);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.about-section h2:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--first-color);
+}
+
+.about-section p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.supervisor-section {
+  margin-bottom: 4rem;
+}
+
+.supervisor-section h2 {
+  font-size: 1.8rem;
+  color: var(--title-color);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.supervisor-section h2:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--first-color);
+}
+
+/* Updated: Supervisor grid for 3 supervisors */
+.supervisor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.supervisor-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Added hover effect */
+.supervisor-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.supervisor-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.supervisor-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.supervisor-card:hover .supervisor-image img {
+  transform: scale(1.05);
+}
+
+.supervisor-details {
+  padding: 1.5rem;
+}
+
+.supervisor-details h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--title-color);
+}
+
+.supervisor-details h4 {
+  font-size: 1.1rem;
+  color: var(--first-color);
+  margin-bottom: 0.5rem;
+}
+
+.supervisor-designation {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.supervisor-bio {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.team-section {
+  margin-bottom: 2rem;
+}
+
+.team-section h2 {
+  font-size: 1.8rem;
+  color: var(--title-color);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.team-section h2:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--first-color);
+}
+
+/* Updated: Team grid to have exactly 3 columns */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.team-member {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Enhanced hover effect */
+.team-member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.member-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover .member-image img {
+  transform: scale(1.1);
+}
+
+.member-details {
+  padding: 1rem;
+  text-align: center;
+}
+
+.member-details h3 {
+  font-size: 1.2rem;
+  color: var(--title-color);
+  margin-bottom: 0.3rem;
+}
+
+.member-details p {
+  color: var(--first-color);
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.social-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-link:hover {
+  color: var(--first-color);
+  transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .supervisor-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .supervisor-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .project-title {
+    font-size: 2rem;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}

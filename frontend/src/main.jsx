@@ -15,6 +15,7 @@ import App from "./App.jsx";
 import Home from "./components/Home.jsx";
 import VideoToSign from "./components/VideoToSign.jsx";
 import { Embed } from "./components/Embed.jsx";
+import About from "./components/About.jsx"; // Add import for About component
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +23,8 @@ const router = createBrowserRouter(
       <Route path="" element={<Home />} />
       <Route path="videoToSign" element={<VideoToSign />} />
       <Route path="learnSign" element={<Embed />} />
+      <Route path="about" element={<About />} />{" "}
+      {/* Add route for About page */}
     </Route>
   )
 );

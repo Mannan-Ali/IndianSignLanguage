@@ -24,7 +24,7 @@ const Header = () => {
     <header className="header" id="header">
       <nav className="nav container">
         <NavLink to="/" className="nav__logo">
-        <i class="ri-earth-fill"></i>
+          <i class="ri-earth-fill"></i>
           <span>SignWays</span>
         </NavLink>
 
@@ -43,20 +43,11 @@ const Header = () => {
                 Home
               </HashLink>
             </li>
-            <li className="nav__item">
-              <NavLink
-                to="/videoToSign"
-                className={({ isActive }) =>
-                  isActive ? `nav__link active-link` : `nav__link`
-                }
-              >
-                Generate
-              </NavLink>
-            </li>
+
             <li className="nav__item">
               <HashLink
                 smooth
-                to="/#Description"
+                to="/about"
                 className={
                   isActive("#Description")
                     ? "nav__link active-link"
@@ -64,7 +55,7 @@ const Header = () => {
                 }
                 onClick={closeMenu}
               >
-                Description
+                About
               </HashLink>
             </li>
             <li className="nav__item">
@@ -75,6 +66,16 @@ const Header = () => {
                 }
               >
                 Learn
+              </NavLink>
+            </li>
+            <li className="nav__item">
+              <NavLink
+                to="/videoToSign"
+                className={({ isActive }) =>
+                  isActive ? `nav__link active-link` : `nav__link`
+                }
+              >
+                Generate
               </NavLink>
             </li>
           </ul>
