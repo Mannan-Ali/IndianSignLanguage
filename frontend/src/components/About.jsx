@@ -1,103 +1,16 @@
 import React from "react";
 import "../styles/about.css";
+import logochhota from "../assets/img/logochhota.png";
 
 const About = () => {
-  const supervisors = [
-    {
-      id: 1,
-      name: "Dr. Vijay Kumar Trivedi",
-      title: "Project Supervisor",
-      designation: "Associate Professor, Department of Computer Science",
-      image: "https://randomuser.me/api/portraits/men/1.jpg",
-    },
-    {
-      id: 2,
-      name: "Dr. Adnan Abbasi",
-      title: "Project Reviewer",
-      designation: "Assistant Professor",
-      image: "https://randomuser.me/api/portraits/women/1.jpg",
-    },
-    {
-      id: 3,
-      name: "Dr. Abha Trivedi",
-      title: "Project Reviewer",
-      designation: "Assistant Professor",
-      image: "https://randomuser.me/api/portraits/men/2.jpg",
-    },
-  ];
-
-  const teamMembers = [
-    {
-      id: 1,
-      name: "Aditya Sharma",
-      role: "Team Lead & ML Engineer",
-      image: "https://randomuser.me/api/portraits/men/11.jpg",
-      linkedin: "https://linkedin.com/in/adityasharma",
-    },
-    {
-      id: 2,
-      name: "Priya Patel",
-      role: "Frontend Developer",
-      image: "https://randomuser.me/api/portraits/women/12.jpg",
-      linkedin: "https://linkedin.com/in/priyapatel",
-    },
-    {
-      id: 3,
-      name: "Arjun Singh",
-      role: "Backend Developer",
-      image: "https://randomuser.me/api/portraits/men/13.jpg",
-      linkedin: "https://linkedin.com/in/arjunsingh",
-    },
-    {
-      id: 4,
-      name: "Neha Gupta",
-      role: "ML Engineer",
-      image: "https://randomuser.me/api/portraits/women/14.jpg",
-      linkedin: "https://linkedin.com/in/nehagupta",
-    },
-    {
-      id: 5,
-      name: "Rajesh Kumar",
-      role: "UI/UX Designer",
-      image: "https://randomuser.me/api/portraits/men/15.jpg",
-      linkedin: "https://linkedin.com/in/rajeshkumar",
-    },
-    {
-      id: 6,
-      name: "Meera Verma",
-      role: "Data Scientist",
-      image: "https://randomuser.me/api/portraits/women/16.jpg",
-      linkedin: "https://linkedin.com/in/meeraverma",
-    },
-    {
-      id: 7,
-      name: "Vikram Rao",
-      role: "Full Stack Developer",
-      image: "https://randomuser.me/api/portraits/men/17.jpg",
-      linkedin: "https://linkedin.com/in/vikramrao",
-    },
-    {
-      id: 8,
-      name: "Ananya Reddy",
-      role: "ML Engineer",
-      image: "https://randomuser.me/api/portraits/women/18.jpg",
-      linkedin: "https://linkedin.com/in/ananyareddy",
-    },
-    {
-      id: 9,
-      name: "Siddharth Joshi",
-      role: "Backend Developer",
-      image: "https://randomuser.me/api/portraits/men/19.jpg",
-      linkedin: "https://linkedin.com/in/siddharthjoshi",
-    },
-  ];
-
   return (
     <div className="about-container">
       <div className="about-header">
-        <div className="project-logo-placeholder">
-          <span>ISL</span>
-        </div>
+        <img
+          src={logochhota}
+          alt="Indian Sign Language Logo"
+          className="project-logo"
+        />
         <h1 className="project-title">Indian Sign Language Recognition</h1>
         <p className="project-subtitle">
           Bridging communication gaps through advanced machine learning
@@ -108,64 +21,82 @@ const About = () => {
       <div className="about-section">
         <h2>About the Project</h2>
         <p>
-          The Indian Sign Language Recognition project aims to create an
-          accessible platform for real-time translation of Indian Sign Language
-          gestures into text and speech. Leveraging cutting-edge machine
-          learning algorithms and computer vision techniques, our application
-          works to break down communication barriers faced by the deaf and
-          hearing-impaired community in India.
+          The Indian Sign Language Recognition project is dedicated to
+          empowering communication for the deaf and hard-of-hearing community in
+          India. Our platform leverages state-of-the-art machine learning and
+          computer vision to translate Indian Sign Language gestures into text
+          and speech in real time.
         </p>
         <p>
-          This initiative represents a significant step forward in making
-          digital technology more inclusive and accessible to all members of
-          society.
+          By providing an accessible and intuitive interface, we aim to foster
+          inclusivity and bridge the gap between sign language users and the
+          wider society. The project is designed to be scalable, user-friendly,
+          and adaptable to various real-world scenarios, including education,
+          public services, and daily interactions.
+        </p>
+        <p>
+          We believe that technology should be a force for good, breaking down
+          barriers and enabling equal opportunities for all. Our ongoing
+          research and development efforts are focused on improving accuracy,
+          expanding gesture vocabulary, and ensuring the platform remains
+          accessible to everyone.
         </p>
       </div>
 
-      <div className="supervisor-section">
-        <h2>Project Supervisors</h2>
-        <div className="supervisor-grid">
-          {supervisors.map((supervisor) => (
-            <div className="supervisor-card" key={supervisor.id}>
-              <div className="supervisor-image">
-                <img src={supervisor.image} alt={supervisor.name} />
-              </div>
-              <div className="supervisor-details">
-                <h3>{supervisor.name}</h3>
-                <h4>{supervisor.title}</h4>
-                <p className="supervisor-designation">
-                  {supervisor.designation}
-                </p>
-                <p className="supervisor-bio">{supervisor.bio}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+      <div className="about-section">
+        <h2>Mission Statement</h2>
+        <p>
+          To make communication seamless and accessible for everyone by
+          harnessing technology to bridge the gap between sign language users
+          and the broader community.
+          <br />
+          <br />
+          Our mission is to foster a world where language is never a barrier to
+          opportunity, inclusion, or understanding. We strive to empower the
+          deaf and hard-of-hearing community by providing innovative, reliable,
+          and easy-to-use tools that translate Indian Sign Language into spoken
+          and written language. Through continuous research, collaboration, and
+          user-centered design, we are committed to advancing accessibility,
+          promoting awareness, and supporting the social integration of all
+          individuals, regardless of their hearing ability.
+        </p>
       </div>
 
-      <div className="team-section">
-        <h2>Project Team</h2>
-        <div className="team-grid">
-          {teamMembers.map((member) => (
-            <div className="team-member" key={member.id}>
-              <div className="member-image">
-                <img src={member.image} alt={member.name} />
-              </div>
-              <div className="member-details">
-                <h3>{member.name}</h3>
-                <p>{member.role}</p>
-                <a
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-link"
-                >
-                  <i className="ri-linkedin-fill"></i>
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
+      <div className="about-section">
+        <h2>Impact & Goals</h2>
+        <p>
+          Our goal is to empower the deaf and hard-of-hearing community, promote
+          inclusivity, and raise awareness about Indian Sign Language. We aim to
+          make our solution available in educational institutions, public
+          services, and daily life.
+        </p>
+      </div>
+
+      <div className="about-section how-it-works-section">
+        <h2>How It Works</h2>
+        <ol className="how-it-works-list">
+          <li>User performs a sign in front of their device's camera.</li>
+          <li>
+            The system captures and processes the gesture using computer vision.
+          </li>
+          <li>
+            Machine learning models interpret the gesture and translate it into
+            text and speech.
+          </li>
+          <li>
+            The translation is displayed and/or spoken instantly for effective
+            communication.
+          </li>
+        </ol>
+      </div>
+
+      <div className="about-section">
+        <h2>Accessibility Commitment</h2>
+        <p>
+          We are committed to ensuring our platform is accessible to all users,
+          regardless of ability. We follow accessibility best practices and
+          continuously seek feedback to improve usability.
+        </p>
       </div>
     </div>
   );
